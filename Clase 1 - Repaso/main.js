@@ -49,3 +49,10 @@ let i = 3;
 while (i) {
   console.log( i-- );
 }
+
+setInterval(()=>{
+    let hora = new Date();
+    console.log(hora.toTimeString())
+    // console.log(hora.toDateString())
+    // console.log(hora.toLocaleTimeString())
+}, 1000);
