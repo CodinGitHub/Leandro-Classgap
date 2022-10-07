@@ -67,3 +67,30 @@ let variables = ['uno', 'dos', 'tres', 'cuatro', 'cinco'];
 let corte = variables.splice(1,3);
 
 console.log(corte)
+
+// FILTER
+
+let users = [
+    {id: 1, name: "Celina", edad: 28}, 
+    {id: 2, name: "David", edad: 15}, 
+    {id: 3, name: "Federico", edad: 60}
+  ];
+
+let result = users.filter( elemento=>elemento.edad >= 28 )
+
+console.log(result)
+
+let ejercicioArray = ['amor', 'sol', 'piedra', 'día'];
+
+let resultadoPlatzi = ejercicioArray.filter(elemento => elemento.length >= 4)
+
+console.log(resultadoPlatzi)
+
+
+/*--------------------------------*/
+function ejecutarEjercicio(array){
+    return array.filter(elemento => elemento.length >= 4)
+}
+/*--------------------------------*/
+
+console.log(ejecutarEjercicio(['amor', 'sol', 'piedra', 'día']))
