@@ -94,3 +94,34 @@ function ejecutarEjercicio(array){
 /*--------------------------------*/
 
 console.log(ejecutarEjercicio(['amor', 'sol', 'piedra', 'día']))
+
+//Ejercicio 8 platzi
+
+numeros = [1, 1, 1];
+
+let sumaTotal = numeros.reduce( (sum , item) => sum + item , 100 );
+
+console.log(sumaTotal)
+
+// Ejercicio 10 platzi
+
+arregloNumeros = [2,4,6,8,10];
+  // [2,4,6,8,10]
+let resultadoPares = arregloNumeros.filter(item => item %2 == 0);
+
+console.log(resultadoPares)
+console.log(arregloNumeros)
+
+if(resultadoPares.length == arregloNumeros.length){
+   console.log(true)
+}else{
+    console.log(false)
+}
+
+// Ejercicio 12 platzi
+
+let arregloCartas = ['diamonds', 'hearts', 'spades'];
+
+let resultadoCartas = arregloCartas.find( item=>item == 'AS' )
+
+console.log(resultadoCartas)
