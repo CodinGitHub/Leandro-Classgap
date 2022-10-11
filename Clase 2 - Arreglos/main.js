@@ -124,4 +124,10 @@ let arregloCartas = ['diamonds', 'hearts', 'spades'];
 
 let resultadoCartas = arregloCartas.find( item=>item == 'AS' )
 
+if(resultadoCartas == undefined){
+    return false
+}else{
+    return resultadoCartas
+}
+
 console.log(resultadoCartas)
