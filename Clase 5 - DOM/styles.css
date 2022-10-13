@@ -1,0 +1,17 @@
+#parrafo3{
+    background-color: black;
+    width: 100px;
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+    border: 2px solid blueviolet;
+}
+.contenedor-discos{
+    border: 2px solid red;
+    height: 300px;
+}
+
+.disco{
+    border: 1px solid;
+    width: 100px;
+}
