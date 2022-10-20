@@ -37,6 +37,13 @@ Cualquier faltante de los requisitos que se presentan a continuación, hará que
   - Autor o banda del disco.
   - Código numérico único del disco:
     - Si el usuario ingresa un código numérico que ya fue cargado, se deberá pedir otro código (hasta ingresar uno que no haya sido utilizado anteriormente).
+
+
+
+
+
+
+    
   - Todas las pistas del disco, donde cada pista tiene un nombre y una duración:
     - La cantidad de pistas a ingresar NO debe ser fija.
     - No se debe preguntar cuántas pistas hay que cargar, el dato se desconoce.
