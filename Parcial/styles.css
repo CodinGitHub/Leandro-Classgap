@@ -160,19 +160,19 @@ main div.galeria > span {
 main div.galeria div {
     display: flex;
     flex-direction: column;
-    align-self: center;
+    align-self: left;
     width: 90%;
     padding: 1em;
 }
 
 main div.galeria div img {
-    width: 30%;
+    width: 20%;
 }
 
 main div.galeria div h3 {
     padding: .5em;
     font-size: 3.2em;
-    text-align: center;
+    text-align: left;
     color: #134F5C;
 }
 
@@ -186,6 +186,23 @@ main hr {
     margin: 1em 0%;
     width: 100%;
     height: .1em;
+}
+.detalles-disco{
+   
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+.imagen-disco img{
+   
+    width: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.datos-disco{
+  
+    width: 120px;
 }
 
 /** Footer */
@@ -237,19 +254,19 @@ main button:hover {
 @media screen and (min-width: 960px) {
 
     /** Main */
-    main div.galeria {
+    /* main div.galeria {
         flex-direction: row;
-    }
+    } */
 
-    main div.galeria > img {
+    /* main div.galeria > img {
         max-width: 24%;
         margin: 1em .5%;
-    }
+    } */
 
-    main div.galeria div {
+    /* main div.galeria div {
         align-self: flex-start;
         width: 30%;
-    }
+    } */
 
     /** Footer */
     footer ul {

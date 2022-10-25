@@ -37,18 +37,18 @@ Cualquier faltante de los requisitos que se presentan a continuación, hará que
   - Autor o banda del disco.
   - Código numérico único del disco:
     - Si el usuario ingresa un código numérico que ya fue cargado, se deberá pedir otro código (hasta ingresar uno que no haya sido utilizado anteriormente).
-
+- Todas las pistas del disco, donde cada pista tiene un nombre y una duración:
+    - La cantidad de pistas a ingresar NO debe ser fija.
+    - No se debe preguntar cuántas pistas hay que cargar, el dato se desconoce.
+    - Al finalizar la carga de una pista, se debe confirmar si se desea ingresar otra más.
+    - Cuando el usuario decide dejar de cargar pistas, finaliza la acción de la función.
 
 
 
 
 
     
-  - Todas las pistas del disco, donde cada pista tiene un nombre y una duración:
-    - La cantidad de pistas a ingresar NO debe ser fija.
-    - No se debe preguntar cuántas pistas hay que cargar, el dato se desconoce.
-    - Al finalizar la carga de una pista, se debe confirmar si se desea ingresar otra más.
-    - Cuando el usuario decide dejar de cargar pistas, finaliza la acción de la función.
+  
   - En todo caso debe validarse que los datos ingresados sean válidos:
     - El nombre del disco, autor/banda y nombre de la pista no pueden quedar vacíos.
     - El código numérico único del disco no puede ser menor a 1, ni mayor a 999.
