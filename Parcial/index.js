@@ -39,8 +39,8 @@
 
 
 class Disco {
-    constructor(Nombre, Autor, Codigo, Pistas){
-        this.Nombre = Nombre;
+    constructor(nombre, Autor, Codigo, Pistas){
+        this.nombre = nombre;
         this.Autor = Autor;
         this.Codigo = Codigo;
         this.Pistas = Pistas
@@ -196,6 +196,60 @@ const Mostrar = () => {
     // Si modificaste el nombre de la variable para ir armando la cadena, también hacelo acá:
     // document.getElementById('info').innerHTML = html; // <--- ahí es acá
     document.getElementById('info').innerHTML = '';
+
+    // let arregloPrueba = [
+    //     {
+    //     "Nombre": "Disco1",
+    //     "Autor": "Autor1",
+    //     "Codigo": "1",
+    //     "Pistas": [
+    //         {
+    //             "Nombre": "pista1",
+    //             "Duracion": "120"
+    //         },
+    //         {
+    //             "Nombre": "pista2",
+    //             "Duracion": "190"
+    //         },
+    //         {
+    //             "Nombre": "pista3",
+    //             "Duracion": "180"
+    //         }
+    //     ]
+    //     },
+    //     {
+    //         "Nombre": "Disco2",
+    //         "Autor": "Autor2",
+    //         "Codigo": "2",
+    //         "Pistas": [
+    //             {
+    //                 "Nombre": "pista10",
+    //                 "Duracion": "181"
+    //             },
+    //             {
+    //                 "Nombre": "pista11",
+    //                 "Duracion": "190"
+    //             },
+    //             {
+    //                 "Nombre": "pista12",
+    //                 "Duracion": "180"
+    //             },
+    //             {
+    //                 "Nombre": "pista12",
+    //                 "Duracion": "380"
+    //             },
+    //             {
+    //                 "Nombre": "pista14",
+    //                 "Duracion": "180"
+    //             }
+    //         ]
+    //         }
+    // ]
+
+    if(discos.length ==0){
+        alert('Primero tienes que cargar discos')
+    }
+
     discos.forEach(disco => {
         document.getElementById('info').innerHTML += `
         <div class="detalles-disco">
@@ -203,20 +257,57 @@ const Mostrar = () => {
                 <img src="./compact-disc.png" alt="">
             </div>
             <div class="datos-disco">
-                <h3>El lado oscuro de la Programación</h3>
-                <p>Autor: 'Los Programadores Anónimos'</p>
-                <p>Codigo: 001</p>
+                <h3>${disco.nombre}</h3>
+                <p>Autor: ${disco.Autor}</p>
+                <p>Codigo: ${disco.Codigo}</p>
+                <p>Total Pistas: ${disco.Pistas.length}</p>
+                <p>Duracion Total: ${sumarDuracionPistas(disco.Pistas)} seg</p>
+                <p>Promedio Duracion pistas: ${promedioDuracionPistas(disco.Pistas)} seg</p>
+                <p>Mayor duracion pista: ${mayorDuracionPistas(disco.Pistas)}</p>
             </div>
-            <ul>
-                <li>'Esa cajita loca llamada variablecita' - <strong>200</strong> </li> 
-                <li>'Nunca quise ser un NaN' - <strong>180</strong> </li> 
-                <li>'No quiero programar' - <strong>90</strong> </li> 
+            <ul class="contenedor-pistas-${disco.Codigo}">
             </ul>
-        </div>   
-        
+        </div>  
         `
+        let contenedorPistasActual = document.querySelector(`.contenedor-pistas-${disco.Codigo}`)
+        disco.Pistas.forEach(pista => {
+            contenedorPistasActual.innerHTML += `<li>${pista.Nombre} <strong class="duracion-pistas" >${pista.Duracion}</strong> </li>` 
+        });
     });
 
+    let duracionPistas = document.querySelectorAll('.duracion-pistas')
+    duracionPistas.forEach(duracionPista =>{
+        if(parseInt(duracionPista.innerText)>180){
+            duracionPista.style.color = 'red' 
+        }
+    });
 };
 
 // Todas las funciones que necesites:
+function sumarDuracionPistas(arregloPistas){
+    let sumaTotal = 0
+    arregloPistas.forEach(pista =>{
+        sumaTotal = sumaTotal + parseInt(pista.Duracion)
+    })
+    return sumaTotal;
+}
+
+function promedioDuracionPistas(arregloPistas){
+    let sumaTotal = 0
+    arregloPistas.forEach(pista =>{
+        sumaTotal = sumaTotal + parseInt(pista.Duracion)
+    })
+    return Math.round(sumaTotal/arregloPistas.length);
+}
+
+function mayorDuracionPistas(arregloPistas){
+    let mayorPista = 0;
+    arregloPistas.forEach(pista =>{
+        if(parseInt(pista.Duracion) > mayorPista){
+            mayorPista = parseInt(pista.Duracion);
+        }
+    })
+    let resultado = arregloPistas.find(item=>item.Duracion == String(mayorPista))
+    
+    return resultado.Nombre;
+}
